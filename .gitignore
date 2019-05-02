@@ -16,7 +16,6 @@
 .project
 .settings/
 /conf/alluxio-env.sh
-/conf/*
 /conf/metrics.properties
 /conf/alluxio-env.sh.bootstrap.bk
 /data/
