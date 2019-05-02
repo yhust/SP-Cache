@@ -16,11 +16,11 @@ At master node
 
 def SPTestSetUp(fileSize, zipfFactor,flag): # file size in MB, flag: whether write the files
     #settings
-	fileNumber = 10 #500
+	fileNumber = 500 #500
     #fileSize = 200 #MB
     #zipfFactor = 1.5
         machineNumber = 30 #30
-	SPFactor = 6
+	SPFactor = 3
     # generate popularity vector
 	popularity = list()
 	for i in range(1, fileNumber+1 ,1):
