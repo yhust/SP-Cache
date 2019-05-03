@@ -1,4 +1,4 @@
-from scipy.stats import zipf
+#from scipy.stats import zipf
 import os
 from os.path import dirname
 import numpy
@@ -22,11 +22,11 @@ def SPTestSetUp(fileSize, zipfFactor,flag): # file size in MB, flag: whether wri
         machineNumber = 30 #30
 	SPFactor = 3
     # generate popularity vector
-	popularity = list()
-	for i in range(1, fileNumber+1 ,1):
-		popularity.append(zipf.pmf(i, zipfFactor))
-	popularity/=sum(popularity)
-	shuffle(popularity)	
+	#popularity = list()
+	#for i in range(1, fileNumber+1 ,1):
+	#	popularity.append(zipf.pmf(i, zipfFactor))
+	#popularity/=sum(popularity)
+	#shuffle(popularity)	
 	tests_dir = os.path.expanduser('~') # for Linux
 	#tests_dir = os.getenv('HOME')# for mac OS
 	print "tests dir:" + tests_dir
@@ -34,14 +34,16 @@ def SPTestSetUp(fileSize, zipfFactor,flag): # file size in MB, flag: whether wri
 	if not os.path.exists(tests_dir+"/test_files"):
 		os.makedirs(tests_dir+"/test_files")
 
-	fw = open(tests_dir+"/test_files/popularity.txt", "wb")
-	for item in popularity:
-		fw.write("%s\n" % item)
+	#fw = open(tests_dir+"/test_files/popularity.txt", "wb")
+	#for item in popularity:
+	#	fw.write("%s\n" % item)
 
     # calculate the partition_number, in the range of [1, machineNumber]
-	kVector = [max(min(int(popularity[id] * 100 * SPFactor), machineNumber),1) for id in range(0, fileNumber)]
+	#kVector = [max(min(int(popularity[id] * 100 * SPFactor), machineNumber),1) for id in range(0, fileNumber)]
     #kVector =10*numpy.ones(fileNumber,dtype=numpy.int)
     # print partitionNumber
+	# For fixed-size partition
+	kVector=25*numpy.ones(fileNumber,dtype=numpy.int)
 	fw = open(tests_dir+"/test_files/k.txt", "wb")
 	for k in kVector:
 		fw.write("%s\n" % k)
