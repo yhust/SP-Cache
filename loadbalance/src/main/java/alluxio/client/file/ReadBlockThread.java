@@ -166,9 +166,10 @@ public class ReadBlockThread implements Runnable {
             FileReader fr = new FileReader(PROBPATH); //the true will append the new data
             BufferedReader br = new BufferedReader(fr);
             PROB = Double.parseDouble(br.readLine());
-            if(PROB > 1.0  || PROB <0.0)
+            if(PROB > 1.0  || PROB <0.0) {
                 System.out.println("The straggler probability should be in the range of [0,1]");
-            System.exit(-1);
+                System.exit(-1);
+            }
         }
         catch(Exception e){
             e.printStackTrace();
