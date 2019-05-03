@@ -148,7 +148,7 @@ public class ReadBlockThread implements Runnable {
             9.8988
         };
     private static Integer[] ARRAY = new Integer[10000]; // the array to draw random integers from
-    private static double PROB = 0.05; // the probability that a straggler occurs
+    private static double PROB = 0.0; // the probability that a straggler occurs
     private static String PROBPATH = System.getProperty("user.home") + "/test_files/strag_prob.txt";
 
     static {
@@ -166,6 +166,7 @@ public class ReadBlockThread implements Runnable {
             FileReader fr = new FileReader(PROBPATH); //the true will append the new data
             BufferedReader br = new BufferedReader(fr);
             PROB = Double.parseDouble(br.readLine());
+            System.out.println("Strag prob : " + PROB);
             if(PROB > 1.0  || PROB <0.0) {
                 System.out.println("The straggler probability should be in the range of [0,1]");
                 System.exit(-1);
