@@ -43,7 +43,11 @@ def SPTestSetUp(fileSize, zipfFactor,flag): # file size in MB, flag: whether wri
     #kVector =10*numpy.ones(fileNumber,dtype=numpy.int)
     # print partitionNumber
 	# For fixed-size partition
-	kVector=25*numpy.ones(fileNumber,dtype=numpy.int)
+	#kVector=25*numpy.ones(fileNumber,dtype=numpy.int)
+	
+	# For test of network overhead
+	kVector= range(1,31)
+	
 	fw = open(tests_dir+"/test_files/k.txt", "wb")
 	for k in kVector:
 		fw.write("%s\n" % k)

@@ -22,7 +22,7 @@ def NetworkOverhead(totalCount):
 
 
     #print popularity
-    for fileId in range(1, 31):
+    for fileId in range(0, 30):
         for i in range(0, totalCount):
             # get a file id from the popularity
             os.system('bin/alluxio runSPReadExecutor %s' % fileId)
@@ -30,4 +30,4 @@ def NetworkOverhead(totalCount):
     os.system('echo "All read requests submitted!" ')
 
 if __name__ == "__main__":
-    SPBenchmark(int(sys.argv[1]))
+    NetworkOverhead(int(sys.argv[1]))
