@@ -163,7 +163,7 @@ public class ReadBlockThread implements Runnable {
         }
         //LOG.info("yinghao debug:" + Arrays.toString(ARRAY));
         try{
-            FileReader fr = new FileReader(PROBPATH); //the true will append the new data
+            FileReader fr = new FileReader(PROBPATH);
             BufferedReader br = new BufferedReader(fr);
             PROB = Double.parseDouble(br.readLine());
             System.out.println("Strag prob : " + PROB);
