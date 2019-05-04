@@ -22,7 +22,7 @@ def NetworkOverhead(totalCount):
 
 
     #print popularity
-    for fileId in range(0, 30):
+    for fileId in range(0, 11):
         for i in range(0, totalCount):
             # get a file id from the popularity
             os.system('bin/alluxio runSPReadExecutor %s' % fileId)

@@ -46,7 +46,7 @@ def SPTestSetUp(fileSize, zipfFactor,flag): # file size in MB, flag: whether wri
 	#kVector=25*numpy.ones(fileNumber,dtype=numpy.int)
 	
 	# For test of network overhead
-	kVector= range(1,31)
+	kVector= range(1,102,10)
 	
 	fw = open(tests_dir+"/test_files/k.txt", "wb")
 	for k in kVector:
