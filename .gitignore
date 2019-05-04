@@ -45,4 +45,3 @@ target/
 tests.log*
 /test_files/*
 results/*
-*.txt
