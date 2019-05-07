@@ -1,0 +1,21 @@
+Created by renfei
+
+1. Compile and run command:
+-for operation folder:
+$ mvn install
+-for the alluxio project:
+$ mvn install -DskipTests=true -Dlicense.skip=true -Dcheckstyle.skip -Dmaven.javadoc.skip=true
+
+running the FileOperations test file can use:
+$ ./bin/alluxio runLB
+
+running the LocalFileTest.java with:
+$ ./bin/alluxio runLocal
+
+2. Develop progress
+
+- Random Unique Policy done
+
+TODO:
+- PUT and GET client
+
